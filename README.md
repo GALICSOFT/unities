@@ -16,3 +16,21 @@
 ```
 
 * NullReferenceException on GameObjectInspector Editor ⇒ delete Temp and Library folders
+
+
+* dropdown fill
+```cs
+		dropdown.ClearOptions();
+		var option_data = Enumerable.Range(begin, count).Select(x =>
+		{
+			return new Dropdown.OptionData { text = x.ToString() };
+		});
+		var options = new List<Dropdown.OptionData>();
+		options.AddRange(option_data);
+		dropdown.AddOptions(options);
+
+		// or
+		dropdown.ClearOptions();
+		var option_data = Enumerable.Range(begin, count).Select(x => x.ToString()).ToList();
+		dropdown.AddOptions(option_data);
+```
