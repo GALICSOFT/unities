@@ -1,6 +1,10 @@
 # Unity works
 
-# useful code
+# useful code and util
+* atom md preview
+	- https://atom.io/packages/markdown-preview => hot key ctrl-shift-m
+
+
 * git LFS
 ```
 		git lfs install
