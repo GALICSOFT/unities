@@ -78,7 +78,3 @@ else not exist
 end    
 SecondModule -->> App : onCallback
 @enduml
-
-@startuml
-listfonts
-@enduml
