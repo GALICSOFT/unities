@@ -144,8 +144,8 @@ end
 SecondModule -->> App : onCallback
 ```
 
-![sequence-diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/GALICSOFT/unities/main/sequence-daiagram.puml)
-
+![sequence-diagram](http://www.plantuml.com/plantuml/proxy?src=
+https://raw.githubusercontent.com/GALICSOFT/unities/main/sequence-diagram.puml)
 
 ## Mermaid
 #### link
