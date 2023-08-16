@@ -48,9 +48,11 @@ System.FileName:="lastStableBuild" OR System.FileName:~>".zip" OR System.FileNam
 ```
 
 * Speed up the Visual Studio Installer Download
+```sh
 C:\Windows\System32\drivers\etc\hosts
 93.184.215.201 download.visualstudio.microsoft.com
 #68.232.34.200
 #192.229.232.200
 #36.25.247.107
 #192.16.48.200
+```
