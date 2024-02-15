@@ -9,7 +9,15 @@
 ```
 ### M1,M2 Mac jenkins setting
 * jdk install
-   - brew install : copy bash script in homebrew site.  ⇒ https://brew.sh/ko/ 
+   - brew install : copy bash script in homebrew site.  ⇒ https://brew.sh/ko/
+```console
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # brew command error: zsh: command not found: brew
+    vi ~/.zshrc
+    export PATH=/opt/homebrew/bin:$PATH
+    # etc
+    sudo defaults write com.apple.finder AppleShowAllFiles YES
+```
    - brew search jdk
    - brew install jdk@17 ⇐ Formulae
 * setup java virtual machine
@@ -17,8 +25,8 @@
    - java -version
 
 * svn install
-   - brew search subversion
-   - brew install subversion
+   - brew search svn
+   - brew install svn
    - svn --version
 * install openssl
    - brew search openssl
@@ -33,7 +41,7 @@
    - create folder to /Users/${USER_ID}/build.app.jenkins.slave
    - setup the shared folder
        - cd /Users/Shared
-       - ln -s Jenkins.slave /Users/${USER_ID}/build.app.jenkins.slave
+       - ln -s /Users/${USER_ID}/build.app.jenkins.slave Jenkins.slave
 * create jenkins build agent on master
    - path setup
        - jenkins master Node properties ⇒ Environment variables ⇒ add Key-Value ⇒ PATH+HOMEBREW_PATH /opt/homebrew/bin
