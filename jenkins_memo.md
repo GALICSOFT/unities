@@ -2,6 +2,10 @@
 
 ### svn
 
+* subversion download for windows
+   - [current](https://www.visualsvn.com/downloads)
+   - [1.7.10](https://www.visualsvn.com/files/Apache-Subversion-1.7.10.zip)
+
 * svn add all and commit
 ```
     svn add --force * --no-ignore --parents --depth infinity -q
