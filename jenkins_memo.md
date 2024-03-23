@@ -51,7 +51,7 @@
        - jenkins master Node properties ⇒ Environment variables ⇒ add Key-Value ⇒ PATH+HOMEBREW_PATH /opt/homebrew/bin
    - agent.jar download and rename jenins agent.jar ⇒ /Users/${USER_ID}/agent.141.jar
    - create agent file ⇒ /Users/${USER_ID}/Library/LaunchAgents/build.jenkins.agent.plist
-       - ex) build.jenkins.agent.plist
+       - ex) build.jenkins.agent.plist for jnlpUrl
 ```xml
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -85,4 +85,36 @@
         </dict>
         </plist>
 ```
+       - ex) build.jenkins.agent.plist with url
+```xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+        <dict>
+        	<key>Label</key>
+        	<string>jenkins.build</string>
+        	<key>ProgramArguments</key>
+        	<array>
+        		<string>java</string>
+        		<string>-jar</string>
+        		<string>/Users/${USER_ID}/_jenkins.agent/agent.244.jar</string>
+        		<string>-url</string>
+        		<string>http://jenkins_master_url</string>
+        		<string>-secret</string>
+        		<string>secret hash</string>
+        		<string>-name</string>
+        		<string>agent node name</string>
+        		<string>-workDir</string>
+        		<string>/Users/Shared/Jenkins.slave</string>
+        	</array>
+        	<key>RunAtLoad</key>
+        	<true/>
+        	<key>StandardOutPath</key>
+        	<string>/Users/${USER_ID}/_jenkins.agent/agent.log</string>
+        	<key>StandardErrorPath</key>
+        	<string>/Users/${USER_ID}/_jenkins.agent/agent.err</string>
+        </dict>
+        </plist>
+```
+
    - launchctl {load|stop|unload} ~/Library/LaunchAgents/build.jenkins.agent.plist
