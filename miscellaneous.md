@@ -46,6 +46,8 @@ System.FileName:~>".svn" OR System.FileName:~>".zip" OR System.FileName:~>".ipa"
 System.FileName:~="test"
 System.FileName:="lastStableBuild" OR System.FileName:~>".zip" OR System.FileName:~>".ipa" OR System.FileName:~>".apk"
 ```
+* svn auth
+  - svn info --username "uid" --password "pwd"  --trust-server-cert --non-interactive http://svn_server
 
 * Speed up the Visual Studio Installer Download
 ```sh
