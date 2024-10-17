@@ -1,0 +1,6 @@
+@echo Off
+SET SRC_DIR=%1
+SET DST_DIR=%2
+SET SRC_DIR=%SRC_DIR:"=%
+SET DST_DIR=%DST_DIR:"=%
+call robocopy "%SRC_DIR%" "%DST_DIR%" /MIR /E /MT:64 /R:1 /W:1 > nul

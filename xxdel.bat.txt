@@ -1,0 +1,25 @@
+@echo Off
+
+SET DST_DIR=%1
+SET DST_DIR=%DST_DIR:"=%
+
+FOR /F %%a in ('c:\uuidgen.exe') do SET "GUID=%%a"
+SET TEMP_DIR=__@@empty_work_%GUID%
+::ECHO %TEMP_DIR%
+
+SET /p IS_SURE="delete "%DST_DIR%" => sure?(y:yes, n:no): "
+SET IS_SURE=%IS_SURE: =%
+
+echo %date% %time%
+
+IF /i "%IS_SURE%"=="y" (
+	echo "delete ... %DST_DIR%"
+	IF NOT EXIST "%TEMP_DIR%" mkdir "%TEMP_DIR%"
+	call robocopy "%TEMP_DIR%" "%DST_DIR%" /MIR /NOCOPY /MT:64 /R:0 /W:0 > NUL
+	rmdir /s /q "%DST_DIR%"
+	IF EXIST "%TEMP_DIR%" rmdir "%TEMP_DIR%"
+) ELSE (
+	echo "canceled"
+)
+
+echo %date% %time%
