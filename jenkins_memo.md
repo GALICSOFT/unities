@@ -118,3 +118,50 @@
 ```
 
    - launchctl {load|stop|unload} ~/Library/LaunchAgents/build.jenkins.agent.plist
+
+* script console: java, svn, node name
+```groovy
+println System.getProperty("java.version")
+println "--------------------------------"
+println System.getProperty("java.home")
+println "--------------------------------"
+def svnVersion = 'svn --version --quiet'.execute().text.trim()
+println "SVN Version: ${svnVersion}"
+println "--------------------------------"
+Jenkins.instance.nodes.each { node ->
+    println node.nodeName
+```
+
+* system env
+```console
+AAPT_EXE                    Android\Sdk\build-tools\28.0.3\aapt.exe
+ANDROID_HOME                Android\Sdk
+ANDROID_NDK_HOME            Android\Sdk\android-ndk-r16b
+ZIPALIGN                    Android\Sdk\build-tools\28.0.3\zipalign.exe
+NDK_ROOT                    Android\Sdk\ndk\21.4.7075529
+NDK_ROOT_R16B               Android\Sdk\android-ndk-r16b
+NDK_ROOT_R21E               Android\Sdk\ndk\21.4.7075529
+
+GLOBAL_APK_BUILDOPTION      --jobs=8
+GLOBAL_GRADLE_BUILDOPTION   -P_NDK_BUILD_JOBS=8
+GLOBAL_IPA_BUILDOPTION      -jobs 8
+GRADLE_USER_HOME            GradleHome.jenkins
+JAVA_HOME                   Java\jdk-11.0.16.1
+jarsigner                   Java\jdk-11.0.16.1\bin\jarsigner.exe
+JSIGNER                     Android Studio\jre\bin\jarsigner.exe
+
+MSBUILD_2013                Program Files (x86)\MSBuild\12.0\Bin\MSBuild.exe
+MSBUILD_2017                Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\MSBuild.exe
+MSBUILD_2019                Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+MSBUILDBIN_VS2019           Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+VSDEVCMD_2013               Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat
+VSDEVCMD_2017               Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\Common7\Tools\VsDevCmd.bat
+
+NUGET_PACKAGES              Nuget\packages\Newtonsoft.Json.12.0.3
+PATH_XCODE_VER_15.3         /Applications/XcodeV15.3.app
+PROVPROF_ROOT               /Users/n2play/Library/MobileDevice/Provisioning Profiles
+
+CURL                        curl\bin\curl.exe
+svn                         Program Files (x86)\Subversion\bin\svn.exe
+SVNBIN                      Program Files\TortoiseSVN\bin\svn.exe
+```
