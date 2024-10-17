@@ -1,0 +1,35 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Baseline
+[*]
+charset=utf-8
+indent_size = 4
+indent_style = tab
+tab_width = 4
+insert_final_newline = true
+trim_trailing_whitespace = false
+end_of_line=lf
+
+# c++
+[*.{c,cpp,cxx,cc,h,hpp}]
+trim_trailing_whitespace = true
+charset=utf-8-bom
+end_of_line=crlf
+
+# resource files
+[*.rc]
+charset=utf-16le
+trim_trailing_whitespace = false
+
+# shader  files
+[*.{vert,frag}]
+charset=utf-8
+end_of_line=lf
+
+# java, cs, m, mm files
+[*.{java,editorconfig,js,cs,m,mm}]
+charset=utf-8
+end_of_line=lf
