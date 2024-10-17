@@ -62,5 +62,5 @@ C:\Windows\System32\drivers\etc\hosts
 	- create batch to c root, and create short in C:\Users\<user name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```bat
 @echo off
-start /d call "C:\Program Files\Google\Chrome\Application\chrome.exe" https://p.nmn.io/myoffice/ezportal/index_portal.aspx
+start /d call "C:\Program Files\Google\Chrome\Application\chrome.exe" https://xxxxxx.aspx
 ```
