@@ -58,3 +58,9 @@ C:\Windows\System32\drivers\etc\hosts
 #36.25.247.107
 #192.16.48.200
 ```
+* login start chrome with url
+	- create batch to c root, and create short in C:\Users\<user name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+```bat
+@echo off
+start /d call "C:\Program Files\Google\Chrome\Application\chrome.exe" https://p.nmn.io/myoffice/ezportal/index_portal.aspx
+```
