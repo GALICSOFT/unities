@@ -165,3 +165,15 @@ CURL                        curl\bin\curl.exe
 svn                         Program Files (x86)\Subversion\bin\svn.exe
 SVNBIN                      Program Files\TortoiseSVN\bin\svn.exe
 ```
+
+### Windows
+* visual studio download
+   - download.visualstudio.microsoft.com
+   -- goto C:\Windows\System32\drivers\etc\localhost
+```bash
+			93.184.215.201 download.visualstudio.microsoft.com
+			#68.232.34.200
+			#192.229.232.200
+			#36.25.247.107
+			#192.16.48.200
+```
