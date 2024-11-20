@@ -177,3 +177,43 @@ SVNBIN                      Program Files\TortoiseSVN\bin\svn.exe
 			#36.25.247.107
 			#192.16.48.200
 ```
+### Color
+* usign Color ANSI Console Output with color on Execute shell
+```bash
+	#!sh
+	echo -e "\033[31m====>\033[0m setup env +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	echo -e "\033[01m     [01m : 굵게(bold) / 밝게           \033[0m"
+	echo -e "\033[3m      [3m  : 이탤릭체(italic)            \033[0m"
+	echo -e "\033[4m      [4m  : 밑줄(underline)             \033[0m"
+	echo -e "\033[7m      [7m  : 반전(글자색/배경색을 거꾸로)\033[0m"
+	echo -e "\033[9m      [9m  : 가로줄 치기                 \033[0m"
+	echo -e "\033[22m     [22m : 굵게(bold) 제거             \033[0m"
+	echo -e "\033[23m     [23m : 이탤릭체(italic)제거        \033[0m"
+	echo -e "\033[24m     [24m : 밑줄(underline)제거         \033[0m"
+	echo -e "\033[27m     [27m : 반전 제거                   \033[0m"
+	echo -e "\033[29m     [29m : 가로줄 제거                 \033[0m"
+	echo -e "\033[30m\033 [47m   [30m : 글자색:검정          \033[0m"
+	echo -e "\033[31m     [31m : 글자색:빨강                 \033[0m"
+	echo -e "\033[32m     [32m : 글자색:초록                 \033[0m"
+	echo -e "\033[33m     [33m : 글자색:노랑                 \033[0m"
+	echo -e "\033[34m     [34m : 글자색:파랑                 \033[0m"
+	echo -e "\033[35m     [35m : 글자색:마젠트(분홍)         \033[0m"
+	echo -e "\033[36m     [36m : 글자색:시안(청록)           \033[0m"
+	echo -e "\033[37m     [37m : 글자색:백색                 \033[0m"
+	echo -e "\033[39m     [39m : 글자색으로 기본값으로       \033[0m"
+	echo -e "\033[40m     [40m : 바탕색:흑색                 \033[0m"
+	echo -e "\033[41m     [41m : 바탕색:적색                 \033[0m"
+	echo -e "\033[42m     [42m : 바탕색:녹색                 \033[0m"
+	echo -e "\033[43m     [43m : 바탕색:황색                 \033[0m"
+	echo -e "\033[44m     [44m : 바탕색:청색                 \033[0m"
+	echo -e "\033[45m     [45m : 바탕색:분홍색               \033[0m"
+	echo -e "\033[46m     [46m : 바탕색:청록색               \033[0m"
+	echo -e "\033[47m     [47m : 바탕색:흰색                 \033[0m"
+	echo -e "\033[49m     [49m : 바탕색을 기본값으로         \033[0m"
+	echo ""
+	echo ""
+	echo -e "\033[31m\033[7m[ERROR] Something went wrong!    \033[0m"
+	echo -e "\033[32m[SUCCESS] Everything is good!           \033[0m"
+	echo -e "\033[33m[WARNING] Be careful!                   \033[0m"
+	echo -e "\033[36m[INFO] Just letting you know.           \033[0m"
+```
