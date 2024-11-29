@@ -217,3 +217,74 @@ SVNBIN                      Program Files\TortoiseSVN\bin\svn.exe
 	echo -e "\033[33m[WARNING] Be careful!                   \033[0m"
 	echo -e "\033[36m[INFO] Just letting you know.           \033[0m"
 ```
+
+### DOS Batch
+* Parameter Extensions
+```batch
+	test.bat
+		@echo off
+		echo "~0   " %~0
+		echo "~1   " %~1
+		echo "~2   " %~2
+		echo "+++++++++++++++++++++++++++++++++++++++++++++++++"
+		echo "~d0  " %~d0
+		echo "~p0  " %~p0
+		echo "~n0  " %~n0
+		echo "~x0  " %~x0
+		echo "~s0  " %~s0
+		echo "~~dp0  " %~dp0
+		echo "~~pd0  " %~pd0
+		echo "~~pd0  " %~dpn0
+		echo "+++++++++++++++++++++++++++++++++++++++++++++++++"
+		echo "~d1  " %~d1
+		echo "~p1  " %~p1
+		echo "~n1  " %~n1
+		echo "~x1  " %~x1
+		echo "~s1  " %~s1
+		echo "~~dp1  " %~dp1
+		echo "~~pd1  " %~pd1
+		echo "~~pd1  " %~dpn1
+		echo "+++++++++++++++++++++++++++++++++++++++++++++++++"
+		echo "~d2  " %~d2
+		echo "~p2  " %~p2
+		echo "~n2  " %~n2
+		echo "~x2  " %~x2
+		echo "~s2  " %~s2
+		echo "~~dp2  " %~dp2
+		echo "~~pd2  " %~pd2
+		echo "~~pd2  " %~dpn2
+		echo "+++++++++++++++++++++++++++++++++++++++++++++++++"
+
+	D:\temp\temp_181244>test.bat "c:\abc\ccc   .xr" "..\aabbcc.  xx"
+		"~0   " test.bat
+		"~1   " c:\abc\ccc   .xr
+		"~2   " ..\aabbcc.  xx
+		"+++++++++++++++++++++++++++++++++++++++++++++++++"
+		"~d0  " D:
+		"~p0  " \temp\temp_181244\
+		"~n0  " test
+		"~x0  " .bat
+		"~s0  " D:\temp\temp_181244\test.bat
+		"~~dp0  " D:\temp\temp_181244\
+		"~~pd0  " D:\temp\temp_181244\
+		"~~pd0  " D:\temp\temp_181244\test
+		"+++++++++++++++++++++++++++++++++++++++++++++++++"
+		"~d1  " c:
+		"~p1  " \abc\
+		"~n1  " ccc
+		"~x1  " .xr
+		"~s1  " c:\abc\ccc   .xr
+		"~~dp1  " c:\abc\
+		"~~pd1  " c:\abc\
+		"~~pd1  " c:\abc\ccc
+		"+++++++++++++++++++++++++++++++++++++++++++++++++"
+		"~d2  " D:
+		"~p2  " \temp\
+		"~n2  " aabbcc
+		"~x2  " .  xx
+		"~s2  " D:\temp\aabbcc.  xx
+		"~~dp2  " D:\temp\
+		"~~pd2  " D:\temp\
+		"~~pd2  " D:\temp\aabbcc
+		"+++++++++++++++++++++++++++++++++++++++++++++++++"
+```
