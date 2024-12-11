@@ -12,9 +12,14 @@ keytool -v -list -keystore my_app_id.keystore
 
 ### Maven
 - maven: https://mvnrepository.com/
-- google maven: https://maven.google.com/web/index.html? 
-- Kakao SDK: https://developers.kakao.com/docs/latest/ko/android/getting-started#apply-sdk
-- netmarble maven: http://mavenpro.nmn.io/repository/netmarble-sdk-aos/com/netmarble/core/4.8.1.3/core-4.8.1.3.pom
+- Majer Repo
+	- google maven: https://maven.google.com/web/index.html? 
+	- Kakao SDK: https://developers.kakao.com/docs/latest/ko/android/getting-started#apply-sdk
+	- netmarble maven: http://mavenpro.nmn.io/repository/netmarble-sdk-aos/com/netmarble/core
+- Maven Repo check
+	- url valid: curl -I http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	- download: curl -O http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
   
 ### Google Admobs
 - https://developers.google.com/admob/android/rel-notes?hl=ko
