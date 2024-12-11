@@ -12,7 +12,7 @@ keytool -v -list -keystore my_app_id.keystore
 
 ### Maven
 - maven: https://mvnrepository.com/
-- Majer Repo
+- Major Repo
 	- google maven: https://maven.google.com/web/index.html? 
 	- Kakao SDK: https://developers.kakao.com/docs/latest/ko/android/getting-started#apply-sdk
 	- netmarble maven: http://mavenpro.nmn.io/repository/netmarble-sdk-aos/com/netmarble/core
