@@ -12,6 +12,15 @@
     svn commit --non-interactive --trust-server-cert --username "${USER_NAME}" --password "${USER_PWD}" -m "${VAR_COMMITMSG}"
 ```
 ### M1,M2 Mac jenkins setting
+* base
+   - host, local, computer changing
+      - sudo scutil --set HostName NewComputerName
+   	  - sudo scutil --set LocalHostName NewComputerName
+      - sudo scutil --set ComputerNameName NewComputerName
+   - show hidden files and folders
+      - defaults write com.apple.finder AppleShowAllFiles TRUE
+      - killall Finder
+        
 * jdk install
    - brew install : copy bash script in homebrew site.  ⇒ https://brew.sh/ko/
 ```console
