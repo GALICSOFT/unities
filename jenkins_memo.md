@@ -96,6 +96,10 @@
         	<key>ProgramArguments</key>
         	<array>
         		<string>java</string>
+        		<string>-Dnative.encoding=MS949</string>
+        		<string>-Dsun.jnu.encoding=MS949</string>
+        		<string>-Dsun.io.unicode.encoding=MS949</string>
+        		<string>-Dfile.encoding=MS949</string>
         		<string>-jar</string>
         		<string>/Users/${USER_ID}/_jenkins.agent/agent.244.jar</string>
         		<string>-url</string>
