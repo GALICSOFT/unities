@@ -1,7 +1,7 @@
 # IOS deploy Web
 
 ### plist
-- .plst 필요
+- macOS에서 다운로드 서비스 호출에서 .plst 필요
 - bundle-identifier, version, tile을 정확히 명시
 - url: html에서 구성한 다운로드 경로와 일치 시킴
 ```xml
