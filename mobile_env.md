@@ -6,7 +6,16 @@
 - using <jdk>/bin/keytool
 -- ex)
 ```console
-keytool -genkey  -v -keystore my_app_id.keystore -alias my_alias -keyalg RSA -keysize 2048 -validity 33333 (<=year 91)
+-dname:
+  CN: Common Name
+  OU: Organizational Unit
+  O: Organization
+  L: Locality
+  ST: State
+  C: Country
+-storetype : default PKCS12, JKS(option)
+
+jdk\keytool.exe -genkey -v -keystore my_app_id.keystore -alias my_alias -keyalg RSA -keysize 2048 -dname "CN=galic, O=Company, L=Seoul, C=KR" -storetype JKS(option) -validity 33333 (<=year 91)
 keytool -v -list -keystore my_app_id.keystore
 ```
 
