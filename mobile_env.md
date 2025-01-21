@@ -18,6 +18,40 @@
 jdk\keytool.exe -genkey -v -keystore my_app_id.keystore -alias my_alias -keyalg RSA -keysize 2048 -dname "CN=galic, O=Company, L=Seoul, C=KR" -storetype JKS(option) -validity 33333 (<=year 91)
 keytool -v -list -keystore my_app_id.keystore
 ```
+#### resigning example on unity
+```console
+@echo off
+
+set ANDROID_SDK=C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Data\PlaybackEngines\AndroidPlayer
+set ZipAlign="%ANDROID_SDK%\SDK\build-tools\32.0.0\zipalign.exe"
+set ApkSigner="%ANDROID_SDK%\SDK\build-tools\32.0.0\apksigner.bat"
+set JarSigner="%ANDROID_SDK%\OpenJDK\bin\jarsigner.exe"
+
+set SourceApk="source_aos.apk"
+set TargetApk="target_aos.apk"
+set Keystore="keystore_location\my_keystore.file"
+set Password=keystore_pwd
+set Alias=keystore_alias
+
+echo -----------------------------------------------------------
+echo - %SourceApk% resigning
+echo -----------------------------------------------------------
+
+call apktool d %SourceApk% -o temp_unpack
+echo apktool d %SourceApk% -o temp_unpack
+
+echo apktool b temp_unpack -o temp_unpack.apk
+call apktool b temp_unpack -o temp_unpack.apk
+
+echo %ZipAlign% -f -v 4 temp_unpack.apk %TargetApk%
+call %ZipAlign% -f -v 4 temp_unpack.apk %TargetApk%
+
+echo %ApkSigner% sign --v1-signing-enabled true --v2-signing-enabled --ks %Keystore% --ks-key-alias %Alias% --ks-pass pass:%Password% %TargetApk%
+call %ApkSigner% sign --v1-signing-enabled true --v2-signing-enabled --ks %Keystore% --ks-key-alias %Alias% --ks-pass pass:%Password% %TargetApk%
+
+echo %JarSigner% -verify -verbose -certs %TargetApk%
+call %JarSigner% -verify -verbose -certs %TargetApk%
+```
 
 ### Maven
 - maven: https://mvnrepository.com/
