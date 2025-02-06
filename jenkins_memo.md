@@ -11,6 +11,19 @@
     svn add --force * --no-ignore --parents --depth infinity -q
     svn commit --non-interactive --trust-server-cert --username "${USER_NAME}" --password "${USER_PWD}" -m "${VAR_COMMITMSG}"
 ```
+* svn cleanup
+```
+@echo off
+echo svn cleanup target path : %CLEANUP_TARGET_PATH%
+IF EXIST "%CLEANUP_TARGET_PATH%" (
+    pushd "%CLEANUP_TARGET_PATH%"
+    svn cleanup --non-interactive --trust-server-cert
+    svn update --non-interactive --trust-server-cert
+    svn revert . --recursive --non-interactive --trust-server-cert
+    popd
+)
+```
+
 ### M1,M2 Mac jenkins setting
 * base
    - host, local, computer changing
