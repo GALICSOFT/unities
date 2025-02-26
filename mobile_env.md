@@ -127,3 +127,38 @@ call %JarSigner% -verify -verbose -certs %TargetApk%
 	adb shell monkey -p com.example.app 1
 	문제 진단:
 		64비트 디바이스에서 32비트 코드의 메모리 누수, 크래시 등을 재현할 때 유용합니다.
+
+## Command Xcode build
+```bash
+# unity project 
+/usr/bin/xcodebuild -version
+/usr/bin/xcodebuild
+ -workspace <project_path>/Unity-iPhone.xcworkspace
+ -scheme Unity-iPhone
+ -configuration Release archive
+ -archivePath <project_path>/archive.xcarchive
+ -destination generic/platform=iOS 
+
+/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+ -workspace <project_path>/Unity-iPhone.xcworkspace
+ -scheme Unity-iPhone
+ -configuration Release archive
+ -archivePath <project_path>/archive.xcarchive
+ -destination generic/platform=iOS
+ 
+/usr/bin/xcodebuild
+ -exportArchive
+ -archivePath <project_path>/archive.xcarchive
+ -exportPath <export_path>
+ -exportOptionsPlist <plist_path>/plist_path.plist
+ 
+ # general project
+/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project <project_path>/project.xcodeproj -list
+/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project <project_path>/project.xcodeproj -showBuildSettings
+
+xcodebuild
+ -exportArchive
+ -archivePath <project_path>/_archive.xcarchive
+ -exportPath <export_path>
+ -exportOptionsPlist <plist_path>/plist_path.plist
+```
