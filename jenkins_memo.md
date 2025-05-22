@@ -29,7 +29,7 @@ IF EXIST "%CLEANUP_TARGET_PATH%" (
    - host, local, computer changing
       - sudo scutil --set HostName NewComputerName
    	  - sudo scutil --set LocalHostName NewComputerName
-      - sudo scutil --set ComputerNameName NewComputerName
+      - sudo scutil --set ComputerName NewComputerName
    - show hidden files and folders
       - defaults write com.apple.finder AppleShowAllFiles TRUE
       - killall Finder
@@ -59,10 +59,54 @@ IF EXIST "%CLEANUP_TARGET_PATH%" (
    - brew install openssl
    - openssl version
 * install xcode
-   - xcode 15 download
+   - xcode lastest download
    - change Xcode + version
    - Xcode ⇒ Locations Derived Data ⇒ Relative
+   - xcode-select --print_path
+   - xcode-select --switch
+   - xcrun --sdk iphoneos --show-sdk-path
    - create jenkins work forlder
+* install pod
+   - 버전 및 위치 확인
+     - which ruby
+	 - ruby -v
+	 - which gem
+	 - gem -v
+	 - which pod
+	 - pod --version
+   - MAC OS 15.4.1 부터 system에 설치된 gem으로 pod 설치 불가
+     - 다음 가이드로는 system에 pod 설치 안됨
+       - https://guides.cocoapods.org/using/getting-started.html ==> sudo gem install cocoapods
+     - rbenv를 사용하면 jenkins path와 권한 문제 발생
+     - brew를 사용해서 ruby를 설치하고, 시스템에 pod 설치
+   - install pod with brew
+     - brew upgrade
+     - brew update
+     - brew list --versions cocoapods <== 설치 버전 확인. 시스템에 설치할 것이므로 있으면 제거
+     - brew install ruby
+       - 설치 로그 가이드 지시에 따라 실행
+       - If you need to have ruby first in your PATH, run:
+         - echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+       - For compilers to find ruby you may need to set:
+         - export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+         - export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+       - macos@user ~ % which ruby <== ruby가 brew path에 있는 지 확인
+         - /usr/bin/ruby
+       - macos@user ~ % echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+       - macos@user ~ % source ~/.zshrc
+       - macos@user ~ % which ruby <== ruby가 brew path에 있는 지 확인
+         - /opt/homebrew/opt/ruby/bin/ruby
+       - macos@user ~ % which gem <== gem이 brew path에 있는 지 확인
+         - /opt/homebrew/opt/ruby/bin/gem
+       - macos@user ~ % gem -v
+         - 3.6.9
+       - cocoapods 1.15.2 설치
+         - sudo gem install -n /usr/local/bin cocoapods -v 1.15.2
+       - which pod
+         - /usr/local/bin/pod
+       - pod --version
+
+
 * jenkins node shared folder
    - create folder to /Users/${USER_ID}/build.app.jenkins.slave
    - setup the shared folder
