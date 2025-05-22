@@ -83,16 +83,15 @@ IF EXIST "%CLEANUP_TARGET_PATH%" (
         	<string>jenkins.build</string>
         	<key>ProgramArguments</key>
         	<array>
-        		<string>/usr/libexec/java_home</string>
-        		<string>-v</string>
-        		<string>1.17</string>
-        		<string>--exec</string>
         		<string>java</string>
-        		<string>-Dmail.smtp.starttls.enable=true</string>
+        		<string>-Dnative.encoding=MS949</string>
+        		<string>-Dsun.jnu.encoding=MS949</string>
+        		<string>-Dsun.io.unicode.encoding=MS949</string>
+        		<string>-Dfile.encoding=MS949</string>
         		<string>-jar</string>
-        		<string>/Users/${USER_ID}/agent.141.jar</string>
+        		<string>/Users/${USER_ID}/_jenkins.node/agent/agent.jar</string>
         		<string>-jnlpUrl</string>
-        		<string>http://jenkins_master_url/computer/NODE_NAME/jenkins-agent.jnlp</string>
+        		<string>http://jenkins_master_url/computer/NODE_NAME/slave-agent.jnlp</string>
         		<string>-secret</string>
         		<string>secret hash</string>
         		<string>-workDir</string>
@@ -101,9 +100,9 @@ IF EXIST "%CLEANUP_TARGET_PATH%" (
         	<key>RunAtLoad</key>
         	<true/>
         	<key>StandardOutPath</key>
-        	<string>/Users/${USER_ID}/build-app-agent.log</string>
+        	<string>/Users/${USER_ID}/_jenkins.node/agent/agent.log</string>
         	<key>StandardErrorPath</key>
-        	<string>/Users/${USER_ID}/build-app-agent.err</string>
+        	<string>/Users/${USER_ID}/_jenkins.node/agent/agent.err</string>
         </dict>
         </plist>
 ```
@@ -123,22 +122,23 @@ IF EXIST "%CLEANUP_TARGET_PATH%" (
         		<string>-Dsun.io.unicode.encoding=MS949</string>
         		<string>-Dfile.encoding=MS949</string>
         		<string>-jar</string>
-        		<string>/Users/${USER_ID}/_jenkins.agent/agent.244.jar</string>
+        		<string>/Users/${USER_ID}/_jenkins.node/agent/agent.jar</string>
         		<string>-url</string>
         		<string>http://jenkins_master_url</string>
         		<string>-secret</string>
         		<string>secret hash</string>
         		<string>-name</string>
-        		<string>agent node name</string>
+        		<string>NODE_NAME</string>
+        		<string>-webSocket</string>
         		<string>-workDir</string>
         		<string>/Users/Shared/Jenkins.slave</string>
         	</array>
         	<key>RunAtLoad</key>
         	<true/>
         	<key>StandardOutPath</key>
-        	<string>/Users/${USER_ID}/_jenkins.agent/agent.log</string>
+        	<string>/Users/${USER_ID}/_jenkins.node/agent/agent.log</string>
         	<key>StandardErrorPath</key>
-        	<string>/Users/${USER_ID}/_jenkins.agent/agent.err</string>
+        	<string>/Users/${USER_ID}/_jenkins.node/agent/agent.err</string>
         </dict>
         </plist>
 ```
